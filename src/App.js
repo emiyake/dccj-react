@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Test from './Test.js';
+import Clock from './Clock.js';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           Test with props => {this.props.name}
         </p>
         <Test />
+        <Clock />
       </div>
     );
   }
