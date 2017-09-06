@@ -4,6 +4,7 @@ import './App.css';
 
 import Test from './Test.js';
 import Clock from './Clock.js';
+import Toggle from './Toggle.js';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         </p>
         <Test />
         <Clock />
+        <Toggle />
       </div>
     );
   }
