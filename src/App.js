@@ -5,6 +5,9 @@ import './App.css';
 import Test from './Test.js';
 import Clock from './Clock.js';
 import Toggle from './Toggle.js';
+import DjButton from './shared/buttons/dj-button.js'
+import DjInput from './shared/inputs/dj-input.js'
+import DjLoginForm from './shared/forms/dj-login-form.js'
 
 class App extends Component {
   render() {
@@ -23,6 +26,7 @@ class App extends Component {
         <Test />
         <Clock />
         <Toggle />
+        <DjLoginForm />
       </div>
     );
   }
