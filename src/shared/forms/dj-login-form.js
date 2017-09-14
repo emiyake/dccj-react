@@ -30,21 +30,19 @@ class DjLoginForm extends Component {
       <form className="form" onSubmit={this.handleSubmit}>
         <h2>Faça login!</h2>
         <div className="formInput">
-          <input 
-            className = "input"
-            type = "text"
-            name = "username"
-            placeholder = "username"
-            onChange = { this.handleInputChange } 
+          <DjInput 
+            name="username"
+            type="text"
+            placeholder="username"
+            onInputChange={ this.handleInputChange }
           />
         </div>
         <div className="formInput">
-          <input 
-            className = "input"
-            type = "password"
-            name = "password"
-            placeholder = "password"
-            onChange = { this.handleInputChange } 
+          <DjInput 
+            name="password"
+            type="password"
+            placeholder="password"
+            onInputChange={ this.handleInputChange }
           />
         </div>
         <div>
