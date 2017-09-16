@@ -7,8 +7,7 @@ class AccountResource {
 
   static login(username, password) {
     const shouldLogin = username === 'davi' && password === '123'
-    console.log('username', username)
-    console.log('password', password)
+    
     return  shouldLogin ?
     Rx.Observable.of({
       name: 'Davi',
