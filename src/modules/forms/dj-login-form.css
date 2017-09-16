@@ -5,3 +5,7 @@
 .formInput {
   margin: 8px;
 }
+
+.error {
+  color: red;
+}

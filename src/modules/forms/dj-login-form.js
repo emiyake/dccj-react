@@ -6,9 +6,11 @@ import DjInput from '../inputs/dj-input.js';
 import LoginUseCase from '../../domain/login.use-case.js'
 
 class DjLoginForm extends Component {
+  showError = false
+
   constructor(props) {
     super(props);
-    // this.state = { username: '', password: '' };
+    this.state = { username: '', password: '' };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,7 +25,10 @@ class DjLoginForm extends Component {
   onSubmit(event) {
     event.preventDefault();
     LoginUseCase.execute(this.state.username, this.state.password)
-      .subscribe(() => console.log('deu certo'))
+      .subscribe(
+        response => this.props.hasLogged,
+        error => this.showError = true,
+      )
   }
 
   render() {
@@ -55,6 +60,10 @@ class DjLoginForm extends Component {
         <div>
           <DjButton label="Login" />
         </div>
+        {
+          this.showError &&
+          <p className="error">Sorry, try again!</p>
+        }
       </form>
     )
   }
