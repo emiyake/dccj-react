@@ -6,7 +6,8 @@ class AccountResource {
   }
 
   static login(username, password) {
-    console.log('balaaaa')
+    console.log('username', username)
+    console.log('password', password)
     return Rx.Observable.of(true)
   }
 }

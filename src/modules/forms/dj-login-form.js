@@ -8,30 +8,29 @@ import LoginUseCase from '../../domain/login.use-case.js'
 class DjLoginForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    // this.state = { username: '', password: '' };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  onInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     });
   }
 
-  handleSubmit(event) {
-    LoginUseCase.execute(this.state.username, this.state.password)
-    alert('A name was submitted: ' + this.state.username);
-    alert('A pw was submitted: ' + this.state.password);
+  onSubmit(event) {
     event.preventDefault();
+    LoginUseCase.execute(this.state.username, this.state.password)
+      .subscribe(() => console.log('deu certo'))
   }
 
   render() {
     const usernameLabel = 'Username';
     const passwordLabel = 'Password'
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.onSubmit}>
         <h2>Faça login!</h2>
         <div className="formInput">
           <DjInput 
@@ -40,7 +39,7 @@ class DjLoginForm extends Component {
             name="username"
             type="text"
             placeholder="username"
-            onInputChange={ this.handleInputChange }
+            onInputChange={ this.onInputChange }
           />
         </div>
         <div className="formInput">
@@ -50,16 +49,11 @@ class DjLoginForm extends Component {
             name="password"
             type="password"
             placeholder="password"
-            onInputChange={ this.handleInputChange }
+            onInputChange={ this.onInputChange }
           />
         </div>
         <div>
           <DjButton label="Login" />
-        </div>
-
-        <div>
-          <p>username: { this.state.username }</p>
-          <p>password: { this.state.password }</p>
         </div>
       </form>
     )
