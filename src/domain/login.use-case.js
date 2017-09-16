@@ -6,7 +6,7 @@ class LoginUseCase {
   }
 
   static execute(username, password) {
-    AccountResource.login(username, password)
+    return AccountResource.login(username, password)
   }
 }
 
