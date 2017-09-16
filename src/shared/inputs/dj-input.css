@@ -1,3 +1,8 @@
+.input-block {
+  display: inline-block;
+  text-align: left;
+}
+
 .input {
   padding: 4px;
   margin: 4px;
@@ -5,4 +10,9 @@
   border-radius: 4px;
   min-width: 200px;
   min-height: 20px;
+}
+
+.label {
+  display: inline-block;
+  margin: 4px;
 }

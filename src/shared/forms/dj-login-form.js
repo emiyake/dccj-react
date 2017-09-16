@@ -31,6 +31,8 @@ class DjLoginForm extends Component {
         <h2>Faça login!</h2>
         <div className="formInput">
           <DjInput 
+            label = "Username"
+            id = "username"
             name="username"
             type="text"
             placeholder="username"
@@ -39,6 +41,8 @@ class DjLoginForm extends Component {
         </div>
         <div className="formInput">
           <DjInput 
+            label = "Password"
+            id = "password"
             name="password"
             type="password"
             placeholder="password"

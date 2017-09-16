@@ -8,21 +8,34 @@ class DjInput extends Component {
     super(props)
 
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.renderLabelIfThereIsLabel = this.renderLabelIfThereIsLabel.bind(this)
   }
 
   handleInputChange(event) {
     this.props.onInputChange(event)
   }
 
+  renderLabelIfThereIsLabel() {
+    if (this.props.label) {
+      return <label className="label" htmlFor={ this.props.id }>{this.props.label}</label>
+    }
+  }
+
   render() {
     return (
-      <input 
-        className="input"
-        type = { this.props.type }
-        name = { this.props.name }
-        placeholder = { this.props.placeholder }
-        onChange = { this.handleInputChange }
-      />
+      <div className="input-block">
+        <div>
+          { this.renderLabelIfThereIsLabel() }
+        </div>
+        <input 
+          className="input"
+          type = { this.props.type }
+          name = { this.props.name }
+          id = { this.props.id }
+          placeholder = { this.props.placeholder }
+          onChange = { this.handleInputChange }
+        />
+      </div>
     )
   }
 }
