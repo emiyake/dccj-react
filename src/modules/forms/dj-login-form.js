@@ -26,12 +26,14 @@ class DjLoginForm extends Component {
   }
 
   render() {
+    const usernameLabel = 'Username';
+    const passwordLabel = 'Password'
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <h2>Faça login!</h2>
         <div className="formInput">
           <DjInput 
-            label = "Username"
+            label = { usernameLabel }
             id = "username"
             name="username"
             type="text"
@@ -41,7 +43,7 @@ class DjLoginForm extends Component {
         </div>
         <div className="formInput">
           <DjInput 
-            label = "Password"
+            label = { passwordLabel }
             id = "password"
             name="password"
             type="password"
