@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import Clock from './tests/Clock.js'
+import Clock from './modules/clock/dj-clock.js'
 import DjLoginForm from './modules/forms/dj-login-form.js'
 
 class App extends Component {
