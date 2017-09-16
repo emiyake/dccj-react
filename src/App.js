@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import Clock from './tests/Clock.js';
-import Toggle from './tests/Toggle.js';
-import DjButton from './modules/buttons/dj-button.js'
-import DjInput from './modules/inputs/dj-input.js'
+import Clock from './tests/Clock.js'
 import DjLoginForm from './modules/forms/dj-login-form.js'
 
 class App extends Component {

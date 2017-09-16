@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './dj-login-form.css';
 import DjButton from '../buttons/dj-button.js';
 import DjInput from '../inputs/dj-input.js';
+import LoginUseCase from '../../domain/login.use-case.js'
 
 class DjLoginForm extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class DjLoginForm extends Component {
   }
 
   handleSubmit(event) {
+    LoginUseCase.execute(this.state.username, this.state.password)
     alert('A name was submitted: ' + this.state.username);
     alert('A pw was submitted: ' + this.state.password);
     event.preventDefault();
