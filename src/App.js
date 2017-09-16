@@ -11,13 +11,19 @@ class App extends Component {
     this.state = { isLogged: false, name: '' }
 
     this.handleLogin = this.handleLogin.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
   handleLogin(loginResponse) {
-    console.log('handleLogin')
     this.setState({
       isLogged: true,
       name: loginResponse.name
+    })
+  }
+
+  handleLogout() {
+    this.setState({
+      isLogged: false
     })
   }
 
@@ -36,6 +42,10 @@ class App extends Component {
         {
           !this.state.isLogged &&
           <DjLoginForm hasLogged={ this.handleLogin }/>
+        }
+        {
+          this.state.isLogged &&
+          <a className="link" onClick={ this.handleLogout }>Logout</a>
         }
       </div>
     );

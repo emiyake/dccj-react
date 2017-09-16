@@ -6,7 +6,7 @@ class AccountResource {
   }
 
   static login(username, password) {
-    const shouldLogin = username === 'davicorreiajr' && password === '1234'
+    const shouldLogin = username === 'davi' && password === '123'
     console.log('username', username)
     console.log('password', password)
     return  shouldLogin ?
