@@ -6,6 +6,22 @@ import Clock from './modules/clock/dj-clock.js'
 import DjLoginForm from './modules/forms/dj-login-form.js'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { isLogged: false, name: '' }
+
+    this.handleLogin = this.handleLogin.bind(this)
+  }
+
+  handleLogin(loginResponse) {
+    console.log('handleLogin')
+    this.setState({
+      isLogged: true,
+      name: loginResponse.name
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -13,8 +29,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <Clock />
-        <DjLoginForm />
+        {
+          this.state.isLogged &&
+          <Clock name={ this.state.name }/>
+        }
+        {
+          !this.state.isLogged &&
+          <DjLoginForm hasLogged={ this.handleLogin }/>
+        }
       </div>
     );
   }

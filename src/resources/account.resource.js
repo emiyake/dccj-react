@@ -8,7 +8,11 @@ class AccountResource {
   static login(username, password) {
     console.log('username', username)
     console.log('password', password)
-    return Rx.Observable.of(true)
+    return Rx.Observable.of({
+      name: 'Davi',
+      email: 'davicorreiajr@gmail.com',
+      id: 589693730
+    })
   }
 }
 

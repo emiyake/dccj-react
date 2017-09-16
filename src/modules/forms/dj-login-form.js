@@ -26,7 +26,7 @@ class DjLoginForm extends Component {
     event.preventDefault();
     LoginUseCase.execute(this.state.username, this.state.password)
       .subscribe(
-        response => this.props.hasLogged,
+        response => this.props.hasLogged(response),
         error => this.showError = true,
       )
   }
